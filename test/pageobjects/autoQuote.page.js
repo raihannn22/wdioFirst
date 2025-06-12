@@ -18,7 +18,7 @@ class autoQuote extends Page{
     }
 
     get genderFemale(){
-        return $('id:silktest.insurancemobile:id/radio_femaler');
+        return $('id:silktest.insurancemobile:id/radio_female');
     }
 
     get genderMale(){
@@ -69,7 +69,7 @@ class autoQuote extends Page{
 
     get submit(){
         return $('id=silktest.insurancemobile:id/submit');
-    }F
+    }
 
 
 
@@ -78,9 +78,9 @@ class autoQuote extends Page{
         await this.email.setValue(email);
         await this.age.setValue(age);
 
-        if(gender === 'Female'){
+        if(gender == 'Female'){
             await this.genderFemale.click();
-        }else if (gender === 'Male'){
+        }else if (gender == 'Male'){
             await this.genderMale.click();
         }
  
@@ -103,7 +103,7 @@ class autoQuote extends Page{
         await this.scrollIfNeeded(this.carModel);
         await this.carModel.click();
         await this.selectCarModel(carModel).click();
-
+ 
         await this.scrollIfNeeded(this.financialInfo);
         await this.financialInfo.click();
         await this.selectFinancialInfo(financialInfo).click();
